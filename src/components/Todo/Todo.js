@@ -1,10 +1,11 @@
 export default class Todo {
-  constructor(title, description, dueDate = "No date", priority, notes, checklist) {
+  constructor(title, category, dueDate, priority = "low", details, checklist = "not done", id) {
+    this.id = id;
     this.title = title;
-    this.description = description;
+    this.category = category;
     this.dueDate = dueDate;
     this.priority = priority;
-    this.notes = notes;
+    this.details = details;
     this.checklist = checklist;
   }
 
@@ -16,12 +17,12 @@ export default class Todo {
     return this.title;
   }
 
-  setDescription(description) {
-    this.description = description;
+  setCategory(category) {
+    this.category = category;
   }
 
-  getDescription() {
-    return this.description;
+  getCategory() {
+    return this.category;
   }
 
   setDate(dueDate) {
@@ -40,12 +41,12 @@ export default class Todo {
     return this.priority;
   }
 
-  setNotes(notes) {
-    this.notes = notes;
+  setDetails(details) {
+    this.details = details;
   }
 
-  getNotes() {
-    return this.notes;
+  getDetails() {
+    return this.details;
   }
 
   setChecklist(checklist) {

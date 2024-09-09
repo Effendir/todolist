@@ -1,18 +1,11 @@
 import _ from 'lodash';
-import './style.css';
-import Header from './components/Header/Header';
-import Container from './components/Container/Container';
-import Sidebar from './components/Sidebar/Sidebar';
-import Main from './components/Main/Main';
-import Footer from './components/Footer/Footer';
+import './style.scss';
+import UI from "./components/UI/UI"
+const siteUI = new UI()
 
 document.addEventListener('DOMContentLoaded', () => {
-  Header();
-  Container();
-  Sidebar();
-  Main();
-  Footer();
   fontAwesome();
+  siteUI.initialize();
 });
 
 function fontAwesome() {

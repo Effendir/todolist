@@ -1,13 +1,8 @@
-import './Main.css';
+import './Main.scss';
 
-function createMain() {
+export default function createMain() {
   const main = document.createElement("div");
-  main.classList.add("main");
-  const p = document.createElement("p");
-  p.innerText = "I am main content";
-  main.appendChild(p);
+  main.classList.add("main", "flex-auto", "lg:w-5/6", "p-2", "flex", "flex-col", "gap-2");
 
   document.querySelector(".container").appendChild(main);
 }
-
-export default createMain;

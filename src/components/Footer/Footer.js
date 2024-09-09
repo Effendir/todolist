@@ -1,11 +1,11 @@
-import './Footer.css';
+import './Footer.scss';
 
-function createFooter() {
+export default function createFooter() {
   const footer = document.createElement("footer");
-  footer.classList.add("footer");
+  footer.classList.add("footer", "pt-5", "pb-5", "flex", "justify-around", "align-center", "text-sm");
 
   const footerLinks = document.createElement("div");
-  footerLinks.classList.add("footer-links");
+  footerLinks.classList.add("footer-links", "flex");
 
   const footerCopyright = document.createElement("div");
   footerCopyright.classList.add("footer-copyright");
@@ -30,5 +30,3 @@ function createFooter() {
 
   document.body.appendChild(footer);
 }
-
-export default createFooter;

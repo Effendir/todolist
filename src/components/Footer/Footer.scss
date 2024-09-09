@@ -1,18 +1,14 @@
+@import '../../style';
+
 footer {
   width: 100%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  background-color: var(--light-blue);
   color: white;
-  font-size: medium;
 }
 
 .footer-links{
   display: flex;
-  gap: 10%;
+  gap: 30%;
 }
 
 .footer-links a, footer a {
@@ -21,7 +17,7 @@ footer {
 }
 
 .footer-links i:hover, footer a:hover {
-  color: palevioletred;
+  color: var(--beige);
   transform: scale(1.1);
 }
 

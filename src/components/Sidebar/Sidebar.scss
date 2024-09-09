@@ -1,0 +1,28 @@
+@import '../../style';
+
+.sidebar {
+  background-color: var(--beige);
+  border-right: 1px solid var(--light-blue);
+}
+
+.categories, .sort-by {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.categories h2, .sort-by h2 {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.categories button, .sort-by button {
+  color: var(--light-blue);
+  border: 1px solid var(--blue);
+
+  &:hover {
+    color: palevioletred;
+    background-color: white;
+    transform: scale(1.2);
+  }
+}

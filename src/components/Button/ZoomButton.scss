@@ -1,0 +1,12 @@
+.zoom-button {
+  background-color: var(--light-beige);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: white;
+    transform: scale(1.3);
+    }
+}

@@ -1,10 +1,8 @@
-import './Container.css';
+import './Container.scss';
 
-function createContainer() {
+export default function createContainer() {
   const container = document.createElement("div")
   container.classList.add("container");
 
   document.body.appendChild(container);
 }
-
-export default createContainer;

@@ -1,0 +1,29 @@
+.add-todo-form {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  background-color: var(--gold);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  background-color: var(--beige);
+  border: 1px solid var(--light-blue);
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.submit-button {
+  background-color: var(--blue);
+  color: white;
+
+  &:hover {
+    color: var(--blue);
+    background-color: white;
+    transform: scale(1.2);
+  }
+}
+
+.visible {
+  transform: scale(1);
+}
