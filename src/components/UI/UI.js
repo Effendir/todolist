@@ -38,12 +38,17 @@ const todoObject3 = {
   checklist: "not done"
 }
 
-List.addTodo(todoObject);
-List.addTodo(todoObject2);
-List.addTodo(todoObject3);
+if (!localStorage.getItem("todoList")) {
+  List.addTodo(todoObject);
+  List.addTodo(todoObject2);
+  List.addTodo(todoObject3);
+}
 
 export default class UI {
   initialize() {
+
+    this.loadFromLocalStorage();
+
     Header("Todo List");
     Container();
     Sidebar();
@@ -63,6 +68,19 @@ export default class UI {
     closeUpdateTodoForm.addEventListener("click", this.toggleUpdateTodoForm);
 
     this.addTodo();
+  }
+
+  loadFromLocalStorage() {
+    const storedTodos = localStorage.getItem("todoList");
+    if (storedTodos) {
+      const todos = JSON.parse(storedTodos);
+      todos.forEach(todo => List.addTodo(todo));
+    }
+  }
+
+  saveToLocalStorage() {
+    const todos = List.getList();
+    localStorage.setItem("todoList", JSON.stringify(todos));
   }
 
   displayTodoCards(filter, category = "") {
@@ -168,12 +186,14 @@ export default class UI {
       event.preventDefault();
       const todo = {
         title: document.querySelector(".title").value,
-        category: document.querySelector(".category").value,
+        category: document.querySelector(".category").value || "Unsorted",
         dueDate: document.querySelector(".date").value,
         priority: prioritySelect.options[prioritySelect.selectedIndex].text,
         details: document.querySelector(".details").value,
       }
       List.addTodo(todo);
+      instance.saveToLocalStorage();
+
       addTodoForm.reset();
       instance.toggleAddTodoForm();
       instance.displayTodoCards(filterKey);
@@ -214,6 +234,7 @@ export default class UI {
           todoData.checklist = "done";
           List.updateTodo(TodoId, todoData);
         }
+        this.saveToLocalStorage();
         this.displayTodoCards(filterKey);
       });
     });
@@ -229,8 +250,11 @@ export default class UI {
       newTodoData.dueDate = document.querySelector(".update-date").value;
       const prioritySelect = document.querySelector("#update-priority");
       newTodoData.priority = prioritySelect.value;
-      newTodoData.details = document.querySelector(".update-details").value
+      newTodoData.details = document.querySelector(".update-details").value;
+
       List.updateTodo(newTodoData.id, newTodoData);
+      this.saveToLocalStorage();
+
       this.displayTodoCards(filterKey);
       this.toggleUpdateTodoForm();
     })
@@ -242,7 +266,10 @@ export default class UI {
     deleteButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
           const TodoId = parseInt(button.parentElement.dataset.id);
+
           List.removeTodo(TodoId);
+          this.saveToLocalStorage();
+
           this.displayTodoCards(filterKey);
         });
     });
