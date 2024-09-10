@@ -10,9 +10,14 @@
   --blue: #7895B2;
   }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   min-height: 100vh;
   width: 100%;
+  max-width: 100vw;
   margin: 0;
   padding: 0;
   display: flex;
@@ -21,22 +26,42 @@ body {
 }
 
 @media only screen and (max-device-width : 500px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
   .footer {
     display: none;
   }
 
   .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
     display: flex;
     flex-direction: column;
   }
 
   .categories, .sort-by {
     flex-direction: row;
+    gap: 3px;
+
+    button {
+      margin: 2px;
+    }
+  }
+
+  .add-todo-form, .update-todo-form {
+    position: relative;
   }
 
   .add-button {
-    position: absolute;
-    bottom: 1%;
+    position: fixed;
+    top: 0.5%;
+    background-color: var(--light-blue);
   }
 
   .todo-card {
@@ -47,12 +72,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 2px;
   }
 
   .bg-red-500, .bg-yellow-500, .bg-green-500 {
     width: 5px;
     height: 5px;
-    align-self: center;
-    justify-self: center;
   }
 }

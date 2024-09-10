@@ -12,29 +12,29 @@ const List = new TodoList();
 let filterKey = "priority"
 
 const todoObject = {
-  title: "Make soup",
+  title: "Buy Beans",
   category: "Food",
   dueDate: "2024-09-26",
   priority: "Low",
-  details: "Buy cabbage",
+  details: "and catnip",
   checklist: "not done"
 }
 
 const todoObject2 = {
-  title: "Ironing",
+  title: "Moving out of basement",
   category: "House",
   dueDate: "2024-07-12",
   priority: "High",
-  details: "Unplug the iron",
+  details: "forever",
   checklist: "done"
 }
 
 const todoObject3 = {
-  title: "Dance",
+  title: "Drawing mustaches on vegetables",
   category: "Leisure",
   dueDate: "2024-10-31",
   priority: "Medium",
-  details: "Have fun",
+  details: "with a marker",
   checklist: "not done"
 }
 

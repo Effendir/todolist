@@ -8,7 +8,7 @@ export default function CardToDo(id, title, category, dueDate, priority, details
   todoCard.dataset.id = id;
 
   const cardTitle = document.createElement("p");
-  cardTitle.classList.add("card-title", "lg:font-bold");
+  cardTitle.classList.add("card-title", "lg:font-medium");
   cardTitle.innerText = title;
 
   const cardCategory = document.createElement("p");
@@ -26,17 +26,17 @@ export default function CardToDo(id, title, category, dueDate, priority, details
   priorityLight.classList.add("rounded-full", "w-5", "h-5")
   switch (priority) {
     case "Low":
-      priorityLight.classList.add("bg-green-500");
+      priorityLight.classList.add("bg-green-500", "justify-self-center");
       priorityLight.setAttribute("data-value", "Low");
       break;
 
     case "Medium":
-      priorityLight.classList.add("bg-yellow-500");
+      priorityLight.classList.add("bg-yellow-500", "justify-self-center");
       priorityLight.setAttribute("data-value", "Medium");
       break;
 
     case "High":
-      priorityLight.classList.add("bg-red-500");
+      priorityLight.classList.add("bg-red-500", "justify-self-center");
       priorityLight.setAttribute("data-value", "High");
   }
 
