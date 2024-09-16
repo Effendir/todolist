@@ -222,7 +222,9 @@ export default class UI {
 
   checkTodo() {
     const checkButtons = document.querySelectorAll(".card-checklist");
+
     checkButtons.forEach((button) => {
+
       button.addEventListener("click", (e) => {
         const TodoId = parseInt(button.parentElement.dataset.id);
         if (button.classList.contains("checked")) {

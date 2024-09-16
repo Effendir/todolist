@@ -50,13 +50,14 @@ export default function CardToDo(id, title, category, dueDate, priority, details
     case "done":
       cardChecklist.classList.add("checked");
       cardChecklist.setAttribute("data-value", "Done");
-      cardChecklist.innerHTML = `<i class="fa-regular fa-circle-check" style="color: #7895b2;"></i>`
+      cardChecklist.innerHTML = `<i class="fa-regular fa-circle-check" style="color: #7895b2;"></i>`;
+      todoCard.classList.add("greyed");
       break;
 
     case "not done":
       cardChecklist.classList.add("unchecked");
       cardChecklist.setAttribute("data-value", "Not done");
-      cardChecklist.innerHTML = `<i class="fa-regular fa-circle" style="color: #7895b2;"></i>`
+      cardChecklist.innerHTML = `<i class="fa-regular fa-circle" style="color: #7895b2;"></i>`;
       break;
   }
 
