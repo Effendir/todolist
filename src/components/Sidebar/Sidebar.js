@@ -19,11 +19,6 @@ export default function createSidebar() {
   sortByTitle.innerText = "Sort By";
   sortBy.appendChild(sortByTitle);
 
-  const sortByAll = document.createElement("button");
-  sortByAll.classList.add("sort-by-all", "m-2", "pr-1", "pl-1", "rounded");
-  sortByAll.innerText = "All"
-  sortBy.appendChild(sortByAll);
-
   const sortByDate = document.createElement("button");
   sortByDate.classList.add("sort-by-date", "m-2", "pr-1", "pl-1", "rounded");
   sortByDate.innerText = "Date"
