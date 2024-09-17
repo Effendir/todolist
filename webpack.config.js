@@ -10,6 +10,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Todo List',
+      favicon: "./favicon.svg"
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
